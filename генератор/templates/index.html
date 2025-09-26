@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор случайных чисел</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Генератор случайных чисел</h1>
+        
+        <form method="POST" class="form">
+            <div class="input-group">
+                <label for="min">Минимальное число:</label>
+                <input type="number" id="min" name="min" value="1" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="max">Максимальное число:</label>
+                <input type="number" id="max" name="max" value="100" required>
+            </div>
+            
+            <button type="submit" class="btn">Сгенерировать число</button>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            <h2>Результат:</h2>
+            <p class="random-number">{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
